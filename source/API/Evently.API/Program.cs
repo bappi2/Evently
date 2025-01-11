@@ -1,4 +1,5 @@
-﻿using Evently.Modules.Events.Api;
+﻿using Evently.Api.Extensions;
+using Evently.Modules.Events.Api;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.ApplyMigration();
 }
 EventsModule.MapEndpoints(app);
 app.Run();
